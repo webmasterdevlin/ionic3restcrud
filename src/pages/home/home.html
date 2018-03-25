@@ -1,14 +1,30 @@
 <ion-header>
-  <ion-navbar>
+  <ion-navbar color="secondary">
     <ion-title>
-      Ionic Blank
+      IONIC 3
     </ion-title>
   </ion-navbar>
 </ion-header>
 
 <ion-content padding>
-  The world is your oyster.
-  <p>
-    If you get lost, the <a href="http://ionicframework.com/docs/v2">docs</a> will be your guide.
-  </p>
+  <ion-row>
+    <ion-col>
+      <ion-item>
+        <button ion-button color="primary" (click)="onAdd()">Add</button>
+      </ion-item>
+    </ion-col>
+    <ion-col>
+      <ion-item>
+        <button  ion-button color="light" (click)="onUpdate()">Update</button>
+      </ion-item>
+    </ion-col>
+    <ion-col>
+      <ion-item>
+        <button  ion-button color="danger" (click)="onDelete()">Delete</button>
+      </ion-item>
+    </ion-col>
+  </ion-row>
+  <ion-list *ngFor="let post of posts">
+    <ion-item>{{post.title}}</ion-item>
+  </ion-list>
 </ion-content>
